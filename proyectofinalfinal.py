@@ -447,10 +447,10 @@ def inscribir_materia(alumno_id, materias_cupos, clases_alumno, log):
     if alumno_id in clases_alumno and clases_alumno[alumno_id]:
         for clase in clases_alumno[alumno_id]:
             if "materia" in clase and clase["materia"] == materia_sel:
-                print("\n⚠️ Ya estás inscrito en esta materia.")
+                print("\n Ya estás inscrito en esta materia.")
                 return
             if "día" in clase and "turno" in clase and clase["día"] == dia_sel and clase["turno"] == turno_sel:
-                print("\n⚠️ Ya estás inscrito en otra materia en este día y turno.")
+                print("\n Ya estás inscrito en otra materia en este día y turno.")
                 return
 
     if turno_sel == "Mañana":
@@ -501,7 +501,7 @@ def inscribir_materia(alumno_id, materias_cupos, clases_alumno, log):
             arch_w.close()
 
     registrar_log_memfile(log, f"Alumno {alumno_id} se inscribió en {materia_sel} - {dia_sel} - {turno_sel} (Aula {aula})")
-    print(f"\n✅ Inscripción exitosa en {materia_sel} ({turno_sel}). Aula: {aula}. Horario: {horario}. Quedan {materias_cupos[clave]} cupos.")
+    print(f"\n Inscripción exitosa en {materia_sel} ({turno_sel}). Aula: {aula}. Horario: {horario}. Quedan {materias_cupos[clave]} cupos.")
 
 def ver_clases_alumno(alumno_id, clases_alumno):
     print("\n--- Mis Clases (Alumno) ---")
@@ -566,9 +566,9 @@ def inscribir_clase_profesor(profesor_id, clases_profesor, log):
         for clase in clases_profesor[profesor_id]:
             if "día" in clase and "turno" in clase and clase["día"] == dia_sel and clase["turno"] == turno_sel:
                 if "materia" in clase and clase["materia"] == materia_sel:
-                    print("\n⚠️ Ya estás registrado en esta clase en este día y turno.")
+                    print("\n Ya estás registrado en esta clase en este día y turno.")
                 else:
-                    print("\n⚠️ Ya tienes otra clase en este día y turno.")
+                    print("\n Ya tienes otra clase en este día y turno.")
                 return
 
     if turno_sel == "Mañana":
@@ -617,7 +617,7 @@ def inscribir_clase_profesor(profesor_id, clases_profesor, log):
             arch_w.close()
 
     registrar_log_memfile(log, f"Profesor {profesor_id} se inscribió en {materia_sel} - {dia_sel} - {turno_sel} (Aula {aula})")
-    print(f"\n✅ Clase asignada: {materia_sel} - {dia_sel} - {turno_sel} - Aula {aula}")
+    print(f"\n Clase asignada: {materia_sel} - {dia_sel} - {turno_sel} - Aula {aula}")
 
 def ver_clases_profesor(profesor_id, clases_profesor):
     print("\n--- Mis Clases (Profesor) ---")
@@ -1046,3 +1046,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
