@@ -1,0 +1,12 @@
+admin;1234;admin
+profe;abcd;profesor
+alumno;1111;alumno
+uno;uno;profesor
+2;2;profesor
+3;4;admin
+5;5;profesor
+4;4;alumno
+6;6;alumno
+1;1;admin
+7;7;alumno
+p;p;alumno
